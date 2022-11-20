@@ -24,7 +24,7 @@ class _MyQuestionsState extends State<MyQuestions> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Questions"),
+        title: Text("My Posts"),
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
@@ -35,19 +35,21 @@ class _MyQuestionsState extends State<MyQuestions> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return ShimmerWaiting();
           }
-          if (!snapshot.hasData) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("You didn't add any quetion"),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/add_new_question');
-                  },
-                  child: Text("Post a question"),
-                ),
-              ],
+          if (snapshot.data!.docs.isEmpty) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("You didn't add any post"),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/add_new_question',arguments: (){});
+                    },
+                    child: Text("Add Post"),
+                  ),
+                ],
+              ),
             );
           }
           final data = snapshot.hasData ? snapshot.data!.docs : [];

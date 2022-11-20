@@ -51,12 +51,14 @@ class _forgotPasswordState extends State<forgotPassword> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text("Forgot Password!",
-                            style: TextStyle(
-                              fontSize: constraints.maxHeight * .045,
-                              color: Colors.black,
-                            ),
-                            textAlign: TextAlign.start),
+                        Text(
+                          "Forgot Password!",
+                          style: TextStyle(
+                            fontSize: constraints.maxHeight * .045,
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.start,
+                        ),
                         SizedBox(
                           height: constraints.maxHeight * 0.2,
                         ),

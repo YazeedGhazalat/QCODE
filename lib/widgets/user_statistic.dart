@@ -19,7 +19,7 @@ class UserSatistic extends StatelessWidget {
                   
             ),
             const Text(
-              "Questions",
+              "Posts",
               style: TextStyle(
                 //color: Colors.white,
               ),

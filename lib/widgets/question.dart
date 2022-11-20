@@ -97,8 +97,8 @@ class _QuestionComponentState extends State<QuestionComponent> {
           ),
           //subtitle
           SelectableText(
-            widget._post['description'].toString().length > 500
-                ? "${widget._post['description'].toString().substring(0, 500)}..."
+            widget._post['description'].toString().length > 300
+                ? "${widget._post['description'].toString().substring(0, 300)}..."
                 : widget._post['description'].toString(),
             style: Theme.of(context).textTheme.bodyText2,
           ),

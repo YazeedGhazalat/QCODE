@@ -77,7 +77,7 @@ class _AddNewQuestionsState extends State<AddNewQuestions> {
     Function rebuild = ModalRoute.of(context)!.settings.arguments as Function;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add question"),
+        title: const Text("Add post"),
         actions: [
           TextButton(
             onPressed: () {
@@ -98,13 +98,12 @@ class _AddNewQuestionsState extends State<AddNewQuestions> {
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50)
-                      ),
+                          borderRadius: BorderRadius.circular(50)),
                     ),
                     onPressed: () async {
                       await _addNewQuestion(rebuild);
                     },
-                    child: const Text("Done"),
+                    child: const Text("Post"),
                   ),
           ),
         ],
@@ -117,6 +116,14 @@ class _AddNewQuestionsState extends State<AddNewQuestions> {
             child: Column(
               //crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Category",
+                    style: TextStyle(color: Colors.grey),
+                    
+                  ),
+                ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: DropdownButton(
@@ -182,12 +189,12 @@ class _AddNewQuestionsState extends State<AddNewQuestions> {
                   height: 20,
                 ),
                 TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Please enter the description";
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return "Please enter the description";
+                  //   }
+                  //   return null;
+                  // },
                   maxLines: 10,
                   decoration: const InputDecoration(
                     hintText: "Description",
@@ -243,7 +250,7 @@ class _AddNewQuestionsState extends State<AddNewQuestions> {
                       style: TextStyle(color: Colors.black),
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Please enter the description";
+                          return "Please add code here";
                         }
                         return null;
                       },

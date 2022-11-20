@@ -29,12 +29,14 @@ class _AppDrawerState extends State<AppDrawer> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 UserAccountsDrawerHeader(
-                  accountName: Text(
-                    _user.userData['Full name'],
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  accountName: FittedBox(
+                    child: Text(
+                      _user.userData['Full name'],
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                   decoration: BoxDecoration(
@@ -49,44 +51,46 @@ class _AppDrawerState extends State<AppDrawer> {
                       SizedBox(
                         height: 3,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                    text: "${_user.userData['questions']} ",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold)),
-                                TextSpan(
-                                    text: "Questions",
-                                    style: TextStyle(color: Colors.grey)),
-                              ],
+                      FittedBox(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                      text: "${_user.userData['questions']} ",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text: "Posts",
+                                      style: TextStyle(color: Colors.grey)),
+                                ],
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 8,
-                            child: VerticalDivider(
-                              color: Colors.grey,
+                            SizedBox(
+                              height: 8,
+                              child: VerticalDivider(
+                                color: Colors.grey,
+                              ),
                             ),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                    text: "${_user.userData['solutions']} ",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold)),
-                                TextSpan(
-                                    text: "Solutions",
-                                    style: TextStyle(color: Colors.grey)),
-                              ],
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                      text: "${_user.userData['solutions']} ",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text: "Solutions",
+                                      style: TextStyle(color: Colors.grey)),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -148,7 +152,7 @@ class _AppDrawerState extends State<AppDrawer> {
                 ),
                 ListTile(
                   title: Text(
-                    "My questions",
+                    "My posts",
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2!

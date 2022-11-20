@@ -91,6 +91,9 @@ class _CommentComponentState extends State<CommentComponent> {
                     trailing: Icon(Icons.push_pin),
                   ),
                 ListTile(
+                  onTap: (){
+                    Navigator.of(context).pushNamed('/profile',arguments: widget._comment['userId']);
+                  },
                   dense: true,
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(

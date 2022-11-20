@@ -62,7 +62,7 @@ class _FullPostState extends State<FullPost> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            "${details['question']['userFullName'].toString().split(' ')[0]}'s question"),
+            "${details['question']['userFullName'].toString().split(' ')[0]}'s post"),
       ),
       body: RefreshIndicator(
         onRefresh: () async {

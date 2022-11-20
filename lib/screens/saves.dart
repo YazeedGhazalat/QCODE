@@ -37,8 +37,8 @@ class _MySavesState extends State<MySaves> {
               child: CircularProgressIndicator(),
             );
           }
-          if (!snapshot.hasData) {
-            return Text("You didn't save any quetion");
+          if (snapshot.data!.docs.isEmpty) {
+            return Center(child: Text("You didn't save any post"));
           }
           final data = snapshot.hasData ? snapshot.data!.docs : [];
           return ListView.separated(
